@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Sean Tai" />
+    <!-- <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%2290%22>🛝</text></svg>" /> -->
+    <link rel="icon" href="./assets/favicon.svg" />
+    <title>Pixel Playground</title>
+    <link href="./assets/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      body {
+        background-color: var(--bs-light-bg-subtle);
+      }
+      div.container {
+        border: 1px solid var(--bs-light-border-subtle);
+        border-radius: 0.5rem;
+        max-width: 880px;
+      }
+    </style>
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '609661981086441');
+      fbq('init', '239218378685341');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=609661981086441&ev=PageView&noscript=1" />
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=239218378685341&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+  </head>
+  <body class="bg-subtle py-3 px-3">
+    <div class="container p-3 bg-white">
+      <div class="mb-5">
+        <p class="h2">Pixel Playground</p>
+        <p>
+          <a
+            href="https://www.facebook.com/business/help/402791146561655"
+            class="link-primary text-decoration-none pb-4"
+            target="_blank"
+            >Meta Pixel Standard Events</a
+          >
+          <span class="text-body-tertiary">|</span>
+          <a
+            href="https://developers.facebook.com/docs/meta-pixel/implementation/conversion-tracking"
+            class="link-primary text-decoration-none pb-4"
+            target="_blank"
+            >Conversion Tracking
+          </a>
+        </p>
+      </div>
+      <div class="mb-5">
+        <label class="col-form-label">Add Additional Pixel or Dataset</label>
+        <div class="row g-3 align-items-center">
+          <div class="col-md-6">
+            <div class="input-group">
+              <input type="text" id="temp_pixel_ID" class="form-control" placeholder="Pixel or Dataset ID" />
+              <a
+                class="btn btn-secondary"
+                onclick="fbq('init', document.getElementById('temp_pixel_ID').value); fbq('track', 'PageView');"
+                >Add</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-5">
+        <p class="mb-2">Standard Events</p>
+        <div class="row g-2 mb-3 align-items-center">
+          <div class="col-auto">
+            <a class="btn btn-secondary" onclick="fbq('track', 'AddToCart');">AddToCart</a>
+          </div>
+          <div class="col-auto">
+            <a class="btn btn-secondary" onclick="fbq('track', 'AddToWishlist');">AddToWishlist</a>
+          </div>
+          <div class="col-auto">
+            <a class="btn btn-secondary" onclick="fbq('track', 'InitiateCheckout');">InitiateCheckout</a>
+          </div>
+          <div class="col-auto">
+            <a class="btn btn-secondary" onclick="fbq('track', 'ViewContent');">ViewContent</a>
+          </div>
+          <div class="col-auto">
+            <a
+              class="btn btn-secondary"
+              onclick="fbq('track', 'Purchase', {currency: 'USD', value: (Math.random() * 100).toFixed(2)});"
+              >Purchase</a
+            >
+          </div>
+          <div class="col-auto">
+            <a
+              class="btn btn-secondary"
+              onclick="fbq('track', 'Subscribe', {currency: 'USD', value: (Math.random() * 100).toFixed(2)});"
+              >Subscribe</a
+            >
+          </div>
+        </div>
+        <p class="mb-2">Custom Events</p>
+        <div class="row g-2 mb-3 align-items-center">
+          <div class="col-auto">
+            <a class="btn btn-secondary" onclick="fbq('track', 'Ping Zucc');">Ping Zucc</a>
+          </div>
+          <div class="col-auto">
+            <a
+              class="btn btn-secondary"
+              onclick="fbq('track', 'Redefined', {currency: 'USD', value: (Math.random() * 100).toFixed(2)});"
+              >Redefined</a
+            >
+          </div>
+          <div class="col-auto">
+            <div class="input-group">
+              <input
+                type="text"
+                id="custom_event_name"
+                class="form-control"
+                placeholder="Custom Events"
+                value="Impacc" />
+              <a class="btn btn-secondary" onclick="fbq('track', document.getElementById('custom_event_name').value);"
+                >Send Custom Event</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-5">
+        <div class="row">
+          <div class="col-md mb-2">
+            <label for="firstNameInput" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstNameInput" placeholder="First Name" value="Zark" />
+          </div>
+          <div class="col-md mb-2">
+            <label for="lastNameInput" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name" value="BabyRays" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md mb-2">
+            <label for="emailInput" class="form-label">E-mail</label>
+            <input
+              type="text"
+              class="form-control"
+              id="emailInput"
+              placeholder="E-mail address"
+              value="impacc@example.com" />
+          </div>
+          <div class="col-md mb-2">
+            <label for="phoneInput" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="phoneInput" placeholder="Phone Number" value="(555) 010-2368" />
+          </div>
+        </div>
+        <div class="mb-2">
+          <label for="addressInput" class="form-label">Address</label>
+          <input type="text" class="form-control" id="AddressInput" placeholder="Address" value="924 Mason St" />
+        </div>
+        <div class="row">
+          <div class="col-md mb-2">
+            <label for="cityInput" class="form-label">City</label>
+            <input type="text" class="form-control" id="cityInput" placeholder="City" value="San Francisco" />
+          </div>
+          <div class="col-md mb-2">
+            <label for="stateInput" class="form-label">State</label>
+            <input type="text" class="form-control" id="stateInput" placeholder="State" value="CA" />
+          </div>
+          <div class="col-md mb-2">
+            <label for="zipCodeInput" class="form-label">Zip Code</label>
+            <input type="text" class="form-control" id="zipCodeInput" placeholder="Zip Code" value="94129" />
+          </div>
+        </div>
+      </div>
+      <div class="mb-5" id="deeplink">
+        <p class="mb-2">
+          Deep Links (<a
+            href="https://github.com/xtai/sdk-playground"
+            class="link-primary text-decoration-none"
+            target="_blank"
+            >App</a
+          >)
+        </p>
+        <div class="row g-2 mb-3 align-items-center">
+          <div class="col-auto">
+            <a class="btn btn-secondary" href="sdkpark://zucc?tab=deepLink">sdkpark://zucc?tab=deepLink</a>
+          </div>
+          <div class="col-auto">
+            <a class="btn btn-secondary" href="sdkpg://impacc?tab=sendEvents">sdkpg://impacc?tab=sendEvents</a>
+          </div>
+          <div class="col-auto">
+            <a class="btn btn-secondary" href="sdkpg://?tab=about&id=2023">sdkpg://?tab=about&id=2023</a>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <p class="mb-0 text-body-secondary h4">👾 🛝</p>
+        <p class="mb-0 text-body-tertiary">
+          <a
+            href="https://github.com/xtai/pixel-playground"
+            class="link-opacity-75 text-decoration-none"
+            target="_blank"
+            >Source Code</a
+          >
+          | Designed &amp; Built by
+          <a href="https://instagram.com/xiaoyu.tai" class="link-opacity-75 text-decoration-none" target="_blank"
+            >Sean</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
