@@ -20,87 +20,6 @@
         max-width: 880px;
       }
     </style>
-    <!-- Meta Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '609661981086441');
-      fbq('init', '239218378685341');
-      fbq('track', 'PageView');
-    </script>
-    <script>
-      var __cbSdkHost = 'https://ahpixel.buylittlegoods.com/';
-      var __cbSdkSettings = { cbq: { destinations: [{ name: 'cloudbridge' }], host: __cbSdkHost, globalVar: 'cbq' } };
-      !(function (a, h, e, v, n, t, s) {
-        if (a.cbq) return;
-        n = a.cbq = function () {
-          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-        };
-        if (!a._cbq) a._cbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = h.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = h.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(window, document, 'script', __cbSdkHost + 'sdk/capig-events.js');
-      cbq('init', '1697150311655');
-      cbq('loadConfig', '1697150311655');
-      cbq('track', 'PageView');
-    </script>
-    <script>
-      var __cbSdkHost = 'https://ahpixel.buylittlegoods.com/';
-      var __cbSdkSettings = { cbq: { destinations: [{ name: 'cloudbridge' }], host: __cbSdkHost, globalVar: 'cbq' } };
-      !(function (a, h, e, v, n, t, s) {
-        if (a.cbq) return;
-        n = a.cbq = function () {
-          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-        };
-        if (!a._cbq) a._cbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = h.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = h.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(window, document, 'script', __cbSdkHost + 'sdk/capig-events.js');
-      cbq('init', '1697150665630');
-      cbq('loadConfig', '1697150665630');
-      cbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img
-        height="1"
-        width="1"
-        style="display: none"
-        src="https://www.facebook.com/tr?id=609661981086441&ev=PageView&noscript=1" />
-      <img
-        height="1"
-        width="1"
-        style="display: none"
-        src="https://www.facebook.com/tr?id=239218378685341&ev=PageView&noscript=1" />
-    </noscript>
-    <!-- End Meta Pixel Code -->
   </head>
   <body class="bg-subtle py-3 px-3">
     <div class="container p-3 bg-white">
@@ -165,6 +84,18 @@
               onclick="fbq('track', 'Subscribe', {currency: 'USD', value: (Math.random() * 100).toFixed(2)});"
               >Subscribe</a
             >
+          </div>
+        </div>
+        <p class="mb-2">Event Setup Tool</p>
+        <div class="row g-2 mb-3 align-items-center">
+          <div class="col-auto">
+            <a class="btn btn-secondary">Donate</a>
+          </div>
+          <div class="col-auto">
+            <a class="btn btn-secondary">Contact</a>
+          </div>
+          <div class="col-auto">
+            <a class="btn btn-secondary">Subscribe</a>
           </div>
         </div>
         <p class="mb-2">Custom Events</p>
